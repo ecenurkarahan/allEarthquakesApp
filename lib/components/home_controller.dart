@@ -9,7 +9,7 @@ import '../network/api_client.dart';
 class HomeController extends ChangeNotifier {
   Client httpClient = Client();
   late ApiClient apiClient;
-  late EarthquakesModel earthquakesModel;
+  EarthquakesModel? earthquakesModel;
 
   init() {
     apiClient = ApiClient(httpClient: httpClient);
@@ -22,7 +22,7 @@ class HomeController extends ChangeNotifier {
         Logger().i('Response: ${response.body}');
         Map<String, dynamic> body = jsonDecode(response.body);
         earthquakesModel = EarthquakesModel.fromJson(body);
-        Logger().d('Location: ${earthquakesModel.data![0].location}');
+        Logger().d('Location: ${earthquakesModel!.data![0].location}');
         notifyListeners();
       } else {
         Logger().e('Failed to fetch earthquake info.');

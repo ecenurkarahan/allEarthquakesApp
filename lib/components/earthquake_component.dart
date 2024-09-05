@@ -15,7 +15,7 @@ class EarthquakeComponent extends StatelessWidget {
     final DateTime dateTime = DateTime.fromMillisecondsSinceEpoch(int.parse(earthquake.time!), isUtc: true);
     final String formattedTime = DateFormat('yyyy-MM-dd HH:mm:ss').format(dateTime);
     Color alertColor;
-    final Uri url = Uri.parse(earthquake.url!);
+
     switch(earthquake.alert){
       case 'green':
         alertColor = Colors.green;
@@ -41,7 +41,7 @@ class EarthquakeComponent extends StatelessWidget {
           children: [
               ListTile(
                 leading: Image.asset(
-                  'assets/images/earthquake.png',
+                  'assets/images/earthquake_image.png',
                   width: 50,
                   height: 50,
                   fit: BoxFit.cover,
@@ -84,7 +84,7 @@ class EarthquakeComponent extends StatelessWidget {
             SizedBox(height: 10),
             ElevatedButton(
               onPressed: () async {
-
+                final Uri url = Uri.parse(earthquake.url!);
                 if (await canLaunchUrl(url)) {
                   await launchUrl(url);
                 } else {

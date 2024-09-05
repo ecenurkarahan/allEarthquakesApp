@@ -11,6 +11,10 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer(
       builder: (context, HomeController homeController, child) {
+        if(homeController.earthquakesModel==null){
+          return CircularProgressIndicator();
+        }
+        else{
         return Scaffold(
           appBar: AppBar(
             title: Text('All Earthquakes'),
@@ -18,15 +22,16 @@ class HomeScreen extends StatelessWidget {
           body: homeController.earthquakesModel == null
               ? Center(child: CircularProgressIndicator())
               : ListView.builder(
-                  itemCount: homeController.earthquakesModel.data!.length,
+                  itemCount: homeController.earthquakesModel!.data!.length,
                   itemBuilder: (context, index) {
                     return EarthquakeComponent(
-                      earthquake: homeController.earthquakesModel.data![index],
+                      earthquake: homeController.earthquakesModel!.data![index],
                     );
                   },
                 ),
         );
-      },
+      }
+        },
     );
   }
 }
