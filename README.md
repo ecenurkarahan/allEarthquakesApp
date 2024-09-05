@@ -3,14 +3,7 @@
 A new Flutter project.
 
 ## Getting Started
+This is an project that shows the earthquakes around a certain location, location information can be given as parameter to the get request. 
+Here is a screenshot of the app:
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![ScreenShot_5 09 2024_15_21_34](https://github.com/user-attachments/assets/365a99b3-0a6b-4499-9b37-051819d4778a)
